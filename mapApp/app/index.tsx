@@ -9,34 +9,34 @@ import { OpenSans_800ExtraBold } from '@expo-google-fonts/open-sans/800ExtraBold
 
 const INITIAL_REGION = {
   latitude: 37.3287,
-  longitude: -121.9153,
-  latitudeDelta: 0.2,
-  longitudeDelta: 0.2
+  longitude: -122.0250,
+  latitudeDelta: 0.05,
+  longitudeDelta: 0.05
 }
 
-const Place1 = {
-  latitude: 37.3597,
-  longitude: -121.8853,
+const BJs = {
+  latitude: 37.331332,
+  longitude: -122.031814,
 }
 
-const Place2 = {
-  latitude: 37.3397,
-  longitude: -121.9853,
+const HDL = {
+  latitude: 37.323785,
+  longitude: -122.009201,
 }
 
-const Place3 = {
-  latitude: 37.3197,
-  longitude: -121.8953,
+const QQN = {
+  latitude: 37.310707,
+  longitude: -122.024205,
 }
 
 export default function App() {
-
-
-
+  
+  let [fontsLoaded] = useFonts({
+    OpenSans_600SemiBold, 
+    OpenSans_800ExtraBold, 
+  });
 
   const mapRef = useRef<any>();
-
-
   return (
     <View style={styles.container}>
       <MapView style={styles.map} 
@@ -45,30 +45,30 @@ export default function App() {
       showsUserLocation
       ref={mapRef}>
       
-      <Marker  style= {styles.marker}
-        coordinate={Place1}
+      <Marker style= {styles.marker}
+        coordinate={BJs}
         >
-        <Image style={styles.img} source={require('../assets/images/icecream.png')} />
-        <Text style={styles.heading}>SALT & STRAW</Text>
-        <Text style={styles.subheading}>Double Scoop Ice Cream</Text>
-
-      </Marker>
-
-      <Marker  style= {styles.marker}
-        coordinate={Place2}
-        >
-        <Image style={styles.img} source={require('../assets/images/chipotle.webp')} />
-        <Text style={styles.heading}>CHIPOTLE</Text>
-        <Text style={styles.subheading}>Burrito Bowl</Text>
+        <Image style={styles.img} source={require('../assets/images/burger.png')} />
+        <Text style={styles.heading}>BJ's Brewhouse</Text>
+        <Text style={styles.subheading}>Burgers</Text>
 
       </Marker>
 
       <Marker style= {styles.marker}
-        coordinate={Place3}
+        coordinate={HDL}
         >
-        <Image style={styles.img} source={require('../assets/images/burger.png')} />
-        <Text style={styles.heading}>McDonalds</Text>
-        <Text style={styles.subheading}>Burgers</Text>
+        <Image style={styles.img} source={require('../assets/images/haidilao.webp')} />
+        <Text style={styles.heading}>HaiDiLao</Text>
+        <Text style={styles.subheading}>Hot Pot</Text>
+
+      </Marker>
+
+      <Marker style= {styles.marker}
+        coordinate={QQN}
+        >
+        <Image style={styles.img} source={require('../assets/images/noodles.jpg')} />
+        <Text style={styles.heading}>QQ Noodle</Text>
+        <Text style={styles.subheading}>Noodles</Text>
 
       </Marker>
 
